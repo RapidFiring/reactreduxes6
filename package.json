@@ -2,7 +2,16 @@
   "name": "reactreduxes6",
   "version": "0.0.1",
   "description": "App for React and Redux created with Pluralsight course by Cory House",
-  "author": "Cory House",
+  "scripts": {
+    "prestart": "babel-node tools/startMessage.js",
+    "start": "npm-run-all --parallel open:src lint:watch test:watch",
+    "open:src": "babel-node tools/srcServer.js",
+    "lint": "node_modules/.bin/esw webpack.config.* src tools",
+    "lint:watch": "npm run lint -- --watch",
+    "test": "mocha --reporter progress tools/testSetup.js \"src**/*.test.js\"",
+    "test:watch": "npm run test -- --watch"
+  },
+  "author": "Rapid Firing",
   "license": "MIT",
   "dependencies": {
     "babel-polyfill": "6.8.0",
@@ -57,6 +66,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/coryhouse/pluralsight-redux-starter"
+    "url": "https://github.com/RapidFiring/reactreduxes6"
   }
 }

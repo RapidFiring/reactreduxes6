@@ -42,4 +42,9 @@ can be started with his..
     - easy to learn
     - simple
     - no extra layer aof abstraction
-    
+    - no dependence on seperate plugins
+    - simpler debugging
+    - better docs
+    read more [nmp vs gulp](bit.ly/npmvsgulp)
+
+5. webpack
