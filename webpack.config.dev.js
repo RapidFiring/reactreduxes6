@@ -24,16 +24,18 @@ export default {
   devServer: { // where is our source
     contentBase: './src'
   },
+  // enable automated reload on change
+  // help to use hot reloading by supressing errors within webpack
   plugins: [
-    new webpack.HotModuleReplacementPlugin(), // enable automated reload on change
-    new webpack.NoErrorPlugin() // help to use hot reloading by supressing errors within webpack
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoErrorsPlugin()
   ],
   module: { // this section tells webpack what file types it should handle
       loaders: [
         {test: /\.js$/, include: path.join(__dirname, 'src'), loaders: ['babel']},
         {test: /(\.css)$/, loaders: ['style', 'css']},
-        {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loaders: 'file'}, // this and the next 3 lines are necessary for bootstrap font-handling
-        {test: /\.(woff|woff2)$/, loaders: 'url?prefix=font/&limit=5000'},
+        {test: /\.eot(\?v=\d+\.\d+\.\d+)?$/, loader: 'file'}, // this and the next 3 lines are necessary for bootstrap font-handling
+        {test: /\.(woff|woff2)$/, loader: 'url?prefix=font/&limit=5000'},
         {test: /\.ttf(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=application/octet-stream'},
         {test: /\.svg(\?v=\d+\.\d+\.\d+)?$/, loader: 'url?limit=10000&mimetype=image/svg+xml'}
       ]
