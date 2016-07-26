@@ -30,7 +30,7 @@ var HelloWorld = React.createClass({
    
   - require explicit bind with ES6 Class
     
-```Javascript
+``` html
 <div onClick={this.handleClick.bind(this)}></div>
 ```
  
@@ -70,15 +70,15 @@ const HelloWorld = (props) => {
 ```
 
   **9 Benefits from stateless functional components**
-      - No class needed
-      - Avoid 'this' keyword
-      - Enforced best practice (don't support states!) 
-      - high signal-to-noise ratio
-      - enhanced code completion / intellisense
-      - bloated components are obious
-      - easy to understand
-      - easy test
-      - performance
+  - No class needed
+  - Avoid 'this' keyword
+  - Enforced best practice (don't support states!) 
+  - high signal-to-noise ratio
+  - enhanced code completion / intellisense
+  - bloated components are obious
+  - easy to understand
+  - easy test
+  - performance
   
   **Use stateless functional componets when possible**
   
