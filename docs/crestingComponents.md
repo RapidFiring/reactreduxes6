@@ -9,59 +9,65 @@
 
 ### ES5 class component ###
 
-  ```Javascript
-  var HelloWorld = React.createClass({
-    render: function() {
-      return (
-        <h1>Hello World</h1>
-      );
-    }
-  });
-  ```
+``` javascript
+var HelloWorld = React.createClass({
+  render: function() {
+    return (
+      <h1>Hello World</h1>
+    );
+  }
+});
+```
 
 ### ES6 class component ###
 - react in ES6
   - **No autobind**
     Works fine with ES5 createClass
-    ```Javascript
-    <div onClick={this.handleClick}></div>
-    ```
-    require explicit bind with ES6 Class
-    ```Javascript
-    <div onClick={this.handleClick.bind(this)}></div>
-    ```
-    for performance reasons bind in constructor
-    ```Javascript
-    class Contacts estens React.Component {
-      constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-      }
-    }
-    ```
+    
+``` html
+<div onClick={this.handleClick}></div>
+```
+   
+  - require explicit bind with ES6 Class
+    
+```Javascript
+<div onClick={this.handleClick.bind(this)}></div>
+```
+ 
+ - for performance reasons bind in constructor
+    
+``` javascript
+class Contacts estens React.Component {
+  constructor(props) {
+    super(props);
+    this.handleClick = this.handleClick.bind(this);
+  }
+}
+```
+  
   - PropTypes declared separately
   - Default props declared separately
   - set initial state in constructor
 
 ### ES5 Stateless Functional Component ###
 
-    ```Javascript
-    var  HelloWorld = function(props) {
-      return (
-        <h1>Hello World</h1>
-      );
-    };
-    ```
+``` javascript
+var  HelloWorld = function(props) {
+  return (
+    <h1>Hello World</h1>
+  );
+};
+```
 
 ### ES6 Stateless Functional Component ###
 
-    ```Javascript
-    const HelloWorld = (props) => {
-      return (
-        <h1>Hello World</h1>
-      );
-    };
-    ```
+``` javascript
+const HelloWorld = (props) => {
+  return (
+    <h1>Hello World</h1>
+  );
+};
+```
 
   **9 Benefits from stateless functional components**
       - No class needed
@@ -77,7 +83,7 @@
   **Use stateless functional componets when possible**
   
 |  class component | stateless components  |
-|---|---|
+|-----:|:-----|
 |  State | Everywhere else |
 |  Refs | |
 |  Lifecycle methods | |
@@ -94,7 +100,7 @@ more info: [on this link](bit.ly/react-define-component)
 ## Container vs Presentation Component ##
 
 |  Container | Presentation  |
-|---|---|
+|-----:|:-----|
 |  little to no markup | Nearly all markup |
 |  pass data and actions down | receive data and actions via props |
 | knows about Redux | doesn't know about Redux |
